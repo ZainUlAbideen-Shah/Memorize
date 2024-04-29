@@ -3,9 +3,12 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import path from 'path';
 
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/user.js';
+
+const __dirname = path.resolve();
 
 const app = express();
 
@@ -26,4 +29,9 @@ main().then(
 
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
+
+app.use(express.static(path.join(__dirname, '/client/dist')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+});
 
