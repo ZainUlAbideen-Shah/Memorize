@@ -12,13 +12,13 @@ import useStyles from './styles';
 import Icon from './Icon';
 import { signin, signup } from '../../actions/auth';
 
-gapi.load("client:auth2", () => {
-    gapi.client.init({
-        clientId:
-            "1096147400700-oi38i76vj1r2oo4ec2llrfkmnnkrcdc6.apps.googleusercontent.com",
-        plugin_name: "chat",
-    });
-});
+// gapi.load("client:auth2", () => {
+//     gapi.client.init({
+//         clientId:
+//             "1096147400700-oi38i76vj1r2oo4ec2llrfkmnnkrcdc6.apps.googleusercontent.com",
+//         plugin_name: "chat",
+//     });
+// });
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' };
 
